@@ -3,31 +3,75 @@
     {
       "id": 1,
       "email": "admin@test.com",
-      "password": "A123456",
+      "password": "Admin123*",
       "role": "admin",
       "name": "Administrador"
     },
     {
       "id": 2,
       "email": "user@test.com",
-      "password": "A123456",
+      "password": "User123*",
       "role": "user",
-      "name": "Usuario"
+      "name": "Carlos Pérez"
     },
     {
       "id": 3,
       "email": "user2@test.com",
-      "password": "A123456",
+      "password": "User123*",
       "role": "user",
-      "name": "Usuario 2"
+      "name": "Ana Gómez"
+    }
+  ],
+  "spaces": [
+    {
+      "id": 1,
+      "name": "Sala A",
+      "type": "sala_reunion",
+      "capacity": 10,
+      "location": "Piso 2",
+      "status": "available"
+    },
+    {
+      "id": 2,
+      "name": "Sala B",
+      "type": "sala_reunion",
+      "capacity": 6,
+      "location": "Piso 2",
+      "status": "available"
+    },
+    {
+      "id": 3,
+      "name": "Oficina 101",
+      "type": "oficina_privada",
+      "capacity": 4,
+      "location": "Piso 1",
+      "status": "available"
+    },
+    {
+      "id": 4,
+      "name": "Coworking Open",
+      "type": "coworking",
+      "capacity": 20,
+      "location": "Planta Baja",
+      "status": "available"
+    },
+    {
+      "id": 5,
+      "name": "Auditorio Principal",
+      "type": "auditorio",
+      "capacity": 100,
+      "location": "Piso 3",
+      "status": "unavailable"
     }
   ],
   "reservations": [
     {
       "id": 1,
       "userId": 2,
-      "workspace": "Sala A",
-      "date": "2026-01-15",
+      "userName": "Carlos Pérez",
+      "spaceId": 1,
+      "spaceName": "Sala A",
+      "date": "2026-06-10",
       "startHour": "08:00",
       "endHour": "09:00",
       "reason": "Sprint Planning",
@@ -36,12 +80,38 @@
     {
       "id": 2,
       "userId": 3,
-      "workspace": "Sala B",
-      "date": "2026-01-15",
+      "userName": "Ana Gómez",
+      "spaceId": 2,
+      "spaceName": "Sala B",
+      "date": "2026-06-10",
       "startHour": "10:00",
       "endHour": "11:00",
       "reason": "Daily Meeting",
       "status": "approved"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "userName": "Carlos Pérez",
+      "spaceId": 3,
+      "spaceName": "Oficina 101",
+      "date": "2026-06-11",
+      "startHour": "09:00",
+      "endHour": "11:00",
+      "reason": "Reunión con cliente",
+      "status": "rejected"
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "userName": "Ana Gómez",
+      "spaceId": 4,
+      "spaceName": "Coworking Open",
+      "date": "2026-06-12",
+      "startHour": "14:00",
+      "endHour": "16:00",
+      "reason": "Trabajo remoto",
+      "status": "cancelled"
     }
   ]
 }
