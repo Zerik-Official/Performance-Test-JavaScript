@@ -8,6 +8,10 @@
 
 # SpaceBook — Workspace Reservation SPA
 
+<p align="center">
+  <img src=".github/example.png" alt="SpaceBook Preview" width="800" />
+</p>
+
 A Single Page Application for managing workspace reservations within a company. Built with Vanilla JavaScript + Vite + TailwindCSS, consuming a REST API simulated with json-server.
 
 ---
@@ -29,6 +33,15 @@ SpaceBook allows employees to reserve shared workspaces (meeting rooms, private 
 ---
 
 ## Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/Zerik-Official/Performance-Test-JavaScript
+cd Performance-Test-JavaScript
+```
+
+Install dependencies
 
 ```bash
 npm install
