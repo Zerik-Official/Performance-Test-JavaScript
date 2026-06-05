@@ -1,21 +1,21 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "email": "admin@test.com",
       "password": "0a5bc3e342432f1bad92ffd51b785343ec72906cdba6a26131060b008e786656",
       "role": "admin",
       "name": "Administrador"
     },
     {
-      "id": 2,
+      "id": "2",
       "email": "carlos@riwi.com",
       "password": "d9804c97ea66f11d01db2411f696894a9b860f50ce1270a286c2b2af45dbd0d1",
       "role": "user",
       "name": "Carlos Pérez"
     },
     {
-      "id": 3,
+      "id": "3",
       "email": "ana@riwi.com",
       "password": "6c61ab95cb67dd09de5632b20252ebb372ab8e83660709d80630c77f7690efe9",
       "role": "user",
@@ -24,94 +24,55 @@
   ],
   "spaces": [
     {
-      "id": 1,
-      "name": "Sala A",
-      "type": "sala_reunion",
-      "capacity": 10,
-      "location": "Piso 2",
-      "status": "available"
-    },
-    {
-      "id": 2,
-      "name": "Sala B",
-      "type": "sala_reunion",
-      "capacity": 6,
-      "location": "Piso 2",
-      "status": "available"
-    },
-    {
-      "id": 3,
-      "name": "Oficina 101",
-      "type": "oficina_privada",
-      "capacity": 4,
-      "location": "Piso 1",
-      "status": "available"
-    },
-    {
-      "id": 4,
-      "name": "Coworking Open",
+      "name": "Sala coders 1",
       "type": "coworking",
-      "capacity": 20,
-      "location": "Planta Baja",
-      "status": "available"
+      "capacity": 34,
+      "location": "Piso 1",
+      "status": "available",
+      "id": "uCPtUbyEGV0"
     },
     {
-      "id": 5,
-      "name": "Auditorio Principal",
-      "type": "auditorio",
-      "capacity": 100,
-      "location": "Piso 3",
-      "status": "unavailable"
+      "name": "Administración",
+      "type": "oficina_privada",
+      "capacity": 20,
+      "location": "Piso 1",
+      "status": "available",
+      "id": "9FdEQbw9j5A"
+    },
+    {
+      "name": "Sala 2",
+      "type": "coworking",
+      "capacity": 34,
+      "location": "Piso 2",
+      "status": "unavailable",
+      "id": "MXPCq3MHY_w"
     }
   ],
   "reservations": [
     {
-      "id": 1,
-      "userId": 2,
+      "userId": "2",
       "userName": "Carlos Pérez",
-      "spaceId": 1,
-      "spaceName": "Sala A",
-      "date": "2026-06-10",
-      "startHour": "08:00",
-      "endHour": "09:00",
-      "reason": "Sprint Planning",
-      "status": "pending"
+      "spaceId": "9FdEQbw9j5A",
+      "spaceName": "Administración",
+      "date": "2026-06-05",
+      "startHour": "10:23",
+      "endHour": "10:30",
+      "reason": "Reunión de presentación con una nueva empresa añadida al holding. vale",
+      "status": "rejected",
+      "id": "Wcp60TMjjYY"
     },
     {
-      "id": 2,
-      "userId": 3,
-      "userName": "Ana Gómez",
-      "spaceId": 2,
-      "spaceName": "Sala B",
-      "date": "2026-06-10",
-      "startHour": "10:00",
-      "endHour": "11:00",
-      "reason": "Daily Meeting",
-      "status": "approved"
-    },
-    {
-      "id": 3,
-      "userId": 2,
+      "userId": "2",
       "userName": "Carlos Pérez",
-      "spaceId": 3,
-      "spaceName": "Oficina 101",
-      "date": "2026-06-11",
-      "startHour": "09:00",
-      "endHour": "11:00",
-      "reason": "Reunión con cliente",
-      "status": "rejected"
-    },
-    {
-      "id": 4,
-      "userId": 3,
-      "userName": "Ana Gómez",
-      "spaceId": 4,
-      "spaceName": "Coworking Open",
-      "date": "2026-06-12",
-      "startHour": "14:00",
-      "endHour": "16:00",
-      "reason": "Trabajo remoto",
-      "status": "cancelled"
+      "spaceId": "uCPtUbyEGV0",
+      "spaceName": "Sala coders 1",
+      "date": "2026-06-10",
+      "startHour": "10:40",
+      "endHour": "10:42",
+      "reason": "adwadawa",
+      "status": "approved",
+      "id": "ltk-GZcOBU4"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
