@@ -15,7 +15,7 @@ export default function loginView() {
 
         <form id="loginForm" novalidate>
 
-          <p id="loginError" class="text-red-500 text-sm mb-4 hidden"></p>
+          <div id="errorContainer"><p id="loginError"></p></div>
 
           <div class="mb-4">
             <label class="block text-sm font-medium text-slate-700 mb-1">Correo electrónico</label>
