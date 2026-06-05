@@ -1,9 +1,15 @@
-import { saveSession } from "@/utils";
-import { navigateTo } from "@/router/router";
-import { http } from "@/api/http";
+// Utils functions
+import { saveSession } from "@/utils/utils.js";
+import { navigateTo } from "@/router/router.js";
+import { http } from "@/api/http.js";
+
+// Components
+import formBadged from "@/components/formsBadgeds.js";
 
 export const loginController = () => {
-  const form = document.querySelector("#loginForm");
+  const form = document.getElementById("loginForm");
+  const errorContainer = document.getElementById("errorContainer");
+  const btn = document.getElementById("loginBtn");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -11,26 +17,40 @@ export const loginController = () => {
     const email = form.email.value.trim();
     const password = form.password.value.trim();
 
+    if (!email || !password) {
+      errorContainer.innerHTML = formBadged("Complete all fields", "error");
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "Verifying...";
+    errorContainer.innerHTML = "";
+
     try {
-      const users = await http.get(
-        `/users?email=${email}&password=${password}`,
-      );
+      const users = await http.get(`/users?email=${email}&password=${password}`);
 
       if (!users.length) {
-        alert("Credenciales incorrectas");
+
+        errorContainer.innerHTML = formBadged("Incorrect email or password.", "error");
+
+        btn.disabled = false;
+        btn.textContent = "Login";
         return;
       }
 
-      saveSession({
-        id: users[0].id,
-        name: users[0].name,
-        role: users[0].role,
-      });
+      errorContainer.innerHTML = formBadged("Access granted! Redirecting...", "sucess");
+      const user = users[0];
+      saveSession({ id: user.id, name: user.name, role: user.role, email: user.email });
 
-      navigateTo("/home");
+      setTimeout(()=> {
+        navigateTo("/home");
+      }, 3000)
+      
     } catch (error) {
       console.error(error);
-      alert("Error conectando con la API");
+      errorContainer.innerHTML = formBadged("Error connecting to the server. Make sure json-server is active.", "error");
+      btn.disabled = false;
+      btn.textContent = "Login";
     }
   });
 };
