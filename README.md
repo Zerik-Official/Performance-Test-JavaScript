@@ -59,8 +59,8 @@ npx json-server --watch db.json --port 3001
 | Name            | Email            | Password  | Role  |
 |-----------------|------------------|-----------|-------|
 | Administrador   | admin@test.com   | Admin123* | admin |
-| Carlos Pérez    | user@test.com    | User123*  | user  |
-| Ana Gómez       | user2@test.com   | User123*  | user  |
+| Carlos Pérez    | carlos@riwi.com    | Carlos123*  | user  |
+| Ana Gómez       | ana@riwi.com   | Ana123*  | user  |
 
 ---
 
@@ -71,6 +71,7 @@ src/
 ├── api/
 │   └── http.js                  # Base HTTP client (fetch wrapper)
 ├── components/
+│   ├── formsBadgeds.js          # Reusable badged component
 │   ├── Modal.js                 # Reusable modal component
 │   ├── ReservationCard.js       # Reservation card with role-based actions
 │   └── Sidebar.js               # Navigation sidebar
@@ -87,6 +88,8 @@ src/
 │   ├── reservation.service.js   # Reservation API calls
 │   ├── space.service.js         # Space API calls
 │   └── user.service.js          # User API calls
+├── utils/
+│   └── utils.js                 # Session helpers, toast, formatters, auth helpers
 ├── views/
 │   ├── loginView.js
 │   ├── homeView.js
@@ -96,8 +99,7 @@ src/
 │   ├── dashboardView.js
 │   └── notFound.js
 ├── main.js                      # Entry point
-├── style.css                    # Tailwind import
-└── utils.js                     # Session helpers, toast, formatters
+└── style.css                    # Tailwind import
 ```
 
 ---
@@ -133,6 +135,7 @@ src/
 
 ## Bonus Features Implemented
 
+- Passwords are hashed and upon logging in, they are re-hashed and compared.
 - Dashboard with usage statistics and bar charts (CSS-based)
 - Toast notifications
 - Reservation search by space name, reason, or user
