@@ -144,3 +144,4 @@ src/
 - Pagination (6 items per page)
 - Spaces management module (admin only, linked to reservations)
 - Users listing (admin only)
+- Font awesome icons
