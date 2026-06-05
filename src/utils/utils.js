@@ -40,11 +40,11 @@ export const formatDate = (dateStr) => {
 
 /**
  * Function to return capitalized strings, depending on the task state.
- * @param {string} status - Task status-
+ * @param {string} status - Task status.
  */
 export const statusLabel = (status) => {
   const map = {
-    pending: "Earring",
+    pending: "Pending",
     approved: "Approved",
     rejected: "Rejected",
     cancelled: "Canceled",
@@ -75,7 +75,7 @@ export const spaceTypeLabel = (type) => {
     sala_reunion: "Meeting Room",
     oficina_privada: "Private Office",
     coworking: "Coworking",
-    auditorio: "Lounge",
+    auditorio: "Auditorium",
   };
   return map[type] || type;
 };
@@ -83,7 +83,7 @@ export const spaceTypeLabel = (type) => {
 /**
  * Reusable function for displaying notifications
  * @param {string} message - Message to show.
- * @param {string} type - Type of notification to display: sucess, error, info, warning.
+ * @param {string} type - Type of notification to display: success, error, info, warning.
  */
 export const showToast = (message, type = "success") => {
   const existing = document.querySelector("#toast");
