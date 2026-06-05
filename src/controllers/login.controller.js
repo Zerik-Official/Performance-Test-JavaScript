@@ -1,12 +1,12 @@
 // Utils functions
-import { saveSession } from "@/utils/utils.js";
+import { saveSession, hashPassword } from "@/utils/utils.js";
 import { navigateTo } from "@/router/router.js";
 import { http } from "@/api/http.js";
 
 // Components
 import formBadged from "@/components/formsBadgeds.js";
 
-export const loginController = () => {
+export const loginController = async () => {
   const form = document.getElementById("loginForm");
   const errorContainer = document.getElementById("errorContainer");
   const btn = document.getElementById("loginBtn");
@@ -15,7 +15,7 @@ export const loginController = () => {
     e.preventDefault();
 
     const email = form.email.value.trim();
-    const password = form.password.value.trim();
+    const password = await hashPassword(form.password.value.trim());
 
     if (!email || !password) {
       errorContainer.innerHTML = formBadged("Complete all fields", "error");
