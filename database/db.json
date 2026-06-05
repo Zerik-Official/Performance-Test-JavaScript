@@ -3,21 +3,21 @@
     {
       "id": 1,
       "email": "admin@test.com",
-      "password": "Admin123*",
+      "password": "0a5bc3e342432f1bad92ffd51b785343ec72906cdba6a26131060b008e786656",
       "role": "admin",
       "name": "Administrador"
     },
     {
       "id": 2,
-      "email": "user@test.com",
-      "password": "User123*",
+      "email": "carlos@riwi.com",
+      "password": "d9804c97ea66f11d01db2411f696894a9b860f50ce1270a286c2b2af45dbd0d1",
       "role": "user",
       "name": "Carlos Pérez"
     },
     {
       "id": 3,
-      "email": "user2@test.com",
-      "password": "User123*",
+      "email": "ana@riwi.com",
+      "password": "6c61ab95cb67dd09de5632b20252ebb372ab8e83660709d80630c77f7690efe9",
       "role": "user",
       "name": "Ana Gómez"
     }
